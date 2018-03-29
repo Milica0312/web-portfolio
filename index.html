@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D cube image gallery</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+      <style>
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+<!-- CONTROLS-->
+<div class="kontrole">
+
+  <a id="radio-front" href="#">Jedan</a>
+  <a id="radio-left" href="#">Dva</a>
+  <a id="radio-right" href="#">Tri</a>
+  <a id="radio-top" href="#">Cetiri</a>
+  <a id="radio-bottom" href="#">Pet</a>
+  <a id="radio-back" href="#">Sest</a>
+<!--
+  <label>Jedan</label>
+  <input type="radio" checked id="radio-front" name="select-face"/>
+  <label>Dva</label>
+  <input type="radio" id="radio-left" name="select-face"/>
+  <label>Tri</label>
+  <input type="radio" id="radio-right" name="select-face"/>
+  <label>Cetiri</label>
+  <input type="radio" id="radio-top" name="select-face"/>
+  <label>Pet</label>
+  <input type="radio" id="radio-bottom" name="select-face"/>
+  <label>Sest</label>
+  <input type="radio" id="radio-back" name="select-face"/>-->
+</div>
+
+
+<div class="sadrzaj">
+  <div class="space3d" id="customw">
+
+
+      <div class="_3dbox" id="customwidth">
+        <div id="front" class="_3dface _3dface--front testw"></div>
+        <div id="top" class="_3dface _3dface--top testw" ></div>
+        <div id="bottom" class="_3dface _3dface--bottom testw"></div>
+        <div id="left" class="_3dface _3dface--left testw"></div>
+        <div id="right" class="_3dface _3dface--right testw"></div>
+        <div id="back" class="_3dface _3dface--back testw"></div>
+      </div>
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#radio-left").on("click", function(){
+      var rotation = 90;
+        $(".space3d ._3dbox").css("transform", "rotateY("+rotation+"deg)");
+  });
+  $("#radio-right").on("click", function(){
+      var rotation = -90;
+        $(".space3d ._3dbox").css("transform", "rotateY("+rotation+"deg)");
+  });
+  $("#radio-bottom").on("click", function(){
+      var rotation = 90;
+        $(".space3d ._3dbox").css("transform", "rotateX("+rotation+"deg)");
+  });
+  $("#radio-top").on("click", function(){
+      var rotation = -90;
+        $(".space3d ._3dbox").css("transform", "rotateX("+rotation+"deg)");
+  });
+  $("#radio-back").on("click", function(){
+      var rotation = 180;
+        $(".space3d ._3dbox").css("transform", "rotateY("+rotation+"deg)");
+  });
+
+
+});
+</script>
+<script>
+$(document).ready(function(){
+  viewportwidth = screen.width;
+  viewportheight = screen.height;
+  marg = viewportwidth/2;
+  console.log(marg);
+  document.getElementById("front").style.width=viewportwidth + "px";
+  document.getElementById("front").style.height=viewportheight + "px";
+
+  document.getElementById("top").style.width=viewportwidth + "px";
+  document.getElementById("top").style.height=viewportheight + "px";
+
+  document.getElementById("bottom").style.width=viewportwidth + "px";
+  document.getElementById("bottom").style.height=viewportheight + "px";
+
+  document.getElementById("left").style.width=viewportwidth + "px";
+  document.getElementById("left").style.height=viewportheight + "px";
+
+  document.getElementById("right").style.width=viewportwidth + "px";
+  document.getElementById("right").style.height=viewportheight + "px";
+
+  document.getElementById("back").style.width=viewportwidth + "px";
+  document.getElementById("back").style.height=viewportheight + "px";
+
+  document.getElementById("customw").style.width=viewportwidth + "px";
+  document.getElementById("customw").style.height=viewportheight + "px";
+
+  document.getElementById("customwidth").style.width=viewportwidth + "px";
+  document.getElementById("customwidth").style.height=viewportheight + "px";
+  });
+</script>
+</body>
+
+</html>
